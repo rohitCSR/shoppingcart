@@ -19,10 +19,6 @@ const Cart = ({ cart }) => {
     setTotalPrice(price);
   }, [cart, totalItems, totalPrice, setTotalItems, setTotalPrice]);
 
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
-
   return (
     <div className='mainCart'>
       <div className='manCart-items'>

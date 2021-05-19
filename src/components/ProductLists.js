@@ -24,7 +24,7 @@ const ProductLists = () => {
   console.log(products);
 
   return (
-    <div>
+    <div className='products-list'>
       <ProductComponent />
     </div>
   );

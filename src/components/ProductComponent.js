@@ -10,25 +10,25 @@ const ProductComponent = ({ loadCurrentItem }) => {
   const renderList = products.map((product) => {
     const { id, title, image, price, category } = product;
     return (
-      <div className='card-area'>
-        <div className='card'>
-          <div className='image'>
-            <img src={image} alt={title} />
-          </div>
-          {/* <div className='title'>
+      <div className='card' key={id}>
+        <div className='image'>
+          <img src={image} alt={title} className='product-img' />
+        </div>
+        {/* <div className='title'>
           <h1 className='card-header'>{title}</h1>
         </div> */}
-          <div className='price'>
-            <p className='price'> $ {price}</p>
-          </div>
-          <p className='ctgr'>{category}</p>
-          <div className='category'>
-            <Link to={`/product/${id}`}>
-              <button onClick={() => loadCurrentItem(product)}>
-                View Product
-              </button>
-            </Link>
-          </div>
+        <div className='price'>
+          <p className='price'> $ {price}</p>
+        </div>
+        <p className='ctgr'>{category}</p>
+        <div className='category'>
+          <Link to={`/product/${id}`}>
+            <button
+              className='view-button'
+              onClick={() => loadCurrentItem(product)}>
+              View Product
+            </button>
+          </Link>
         </div>
       </div>
     );
